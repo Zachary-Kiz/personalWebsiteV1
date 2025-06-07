@@ -5,6 +5,7 @@ import About from './sections/About/About'
 import Projects from './sections/Projects/Projects'
 import Experience from './sections/Experience/Experience'
 import Contact from './sections/Contact/Contact'
+import './App.css'
 
 function App() {
 
@@ -12,10 +13,12 @@ function App() {
     <>
       <Navbar></Navbar>
       <Landing></Landing>
-      <About></About>
-      <Experience></Experience>
-      <Projects></Projects>
-      <Contact></Contact>
+      <div className='pages'>
+        <About></About>
+        <Experience></Experience>
+        <Projects></Projects>
+        <Contact></Contact>
+      </div>
     </>
   )
 }

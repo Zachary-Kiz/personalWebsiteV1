@@ -7,7 +7,10 @@ const Job = () => {
             <div className="jobHeader">
                 <img className='jobLogo' src="/images/ericsson.svg"></img>
                 <div>
-                    <div><b>Web Developer @ Ericsson</b></div>
+                    <div className='fullTitle'>
+                        <div className='jobTitle'>Web Developer </div>
+                        <div className='jobEmployer'> @ Ericsson</div>
+                    </div>
                     <div>May 2024 - Present</div>
                 </div>
             </div>

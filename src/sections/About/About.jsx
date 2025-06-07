@@ -16,7 +16,7 @@ const About = () => {
                 <div className="headshotContainer">
                     <img className="headshot" src="/images/headshot.jpg"></img>
                 </div>
-                <div>
+                <div className="aboutMeDesc">
                     Hi, my name is Zach! I'm a computer scientist about to enter my fourth year at Queen's University.
                     I'm have a deep love for programming, and am currently working as a full-stack developer.
                     In my free time I enjoy reading and hitting the gym.
