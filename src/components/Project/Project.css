@@ -1,0 +1,29 @@
+.experienceContainer {
+    display: grid;
+    gap: 40px;
+    width: 35%;
+    margin: auto;
+}
+
+.projectImage {
+    z-index: 0;
+}
+
+.projectDetails {
+    z-index: 1;
+}
+
+.projectLeft {
+    grid-area: 2 / 6 / -1 / -1;
+}
+
+.projectRight {
+    grid-area: 1 / 4 / -1 / 7;
+    text-align: right;
+}
+
+.projectBody {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #112044;
+}

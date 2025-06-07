@@ -1,0 +1,32 @@
+.aboutMe {
+    width: 25vw;
+    flex-direction: column;
+    margin-bottom: auto;
+}
+
+.aboutContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-left: 25%;
+    padding-right: 25%;
+    gap: 100px
+}
+
+.headshot {
+    height: 25vh;
+}
+
+.headshotContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.skillsContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.skillCol {
+    flex-direction: column;
+}

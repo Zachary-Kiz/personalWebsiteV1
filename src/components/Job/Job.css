@@ -1,0 +1,19 @@
+.jobObject {
+    background-color: rgb(2,12,27,0.7);
+    padding: 20px;
+    border-radius: 20px;
+    width: 35%;
+    margin-bottom: 30px;
+}
+
+.jobHeader {
+    display: flex;
+    flex-direction: row;
+}
+
+.jobLogo {
+    margin-right: 20px;
+    height: 5vh;
+    background-color: white;
+    border-radius: 5px;
+}

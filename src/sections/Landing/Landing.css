@@ -1,0 +1,10 @@
+.landingContainer {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    padding-top: 30vh;
+}
+
+.landingPage {
+    height : 95vh
+}

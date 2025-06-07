@@ -1,0 +1,9 @@
+.navText {
+    margin: 5px;
+    color: white;
+}
+
+.navIcon {
+    height: 100%;
+    width: min-content;
+}
