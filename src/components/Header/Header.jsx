@@ -2,9 +2,11 @@ import './Header.css'
 
 const Header = ({children}) => {
     return (
-        <h2 id={children} className="header">
-            {children}
-        </h2>
+        <div>
+            <h1 id={children} className="header">
+                {children}
+            </h1>
+        </div>
     )
 }
 

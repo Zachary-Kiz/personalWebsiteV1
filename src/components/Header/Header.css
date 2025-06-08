@@ -1,3 +1,6 @@
 .header {
     text-align: center;
+    margin: 100px;
+    z-index: 999;
+    color: white;
 }
