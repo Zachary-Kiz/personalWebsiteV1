@@ -1,4 +1,5 @@
 const express = require('express')
+const bodyParser = require('body-parser');
 const cors = require('cors');
 const nodemailer = require('nodemailer')
 const dotenv = require('dotenv');
@@ -19,7 +20,10 @@ const port = 3000
 app.use(cors({
   origin: ['http://localhost:3000', 'http://localhost:5173'], // add all allowed origins here
   credentials: true, // allow cookies (if using)
+  methods: ['GET', 'POST', 'OPTIONS'],
 }));
+
+app.use(bodyParser.json());
 
 async function mongoConnect() {
 
@@ -39,6 +43,8 @@ async function mongoConnect() {
 
     app.post('/send_email', (req, res) => {
 
+      const { name, email, message } = req.body;
+
         const transporter = nodemailer.createTransport({
             host: "smtp.gmail.com",
             port: 587,
@@ -52,14 +58,17 @@ async function mongoConnect() {
           // Wrap in an async IIFE so we can use await.
           (async () => {
             const info = await transporter.sendMail({
-              from: 'zck340350@gmail.com',
+              from: process.env.EMAIL_USER,
               to: process.env.EMAIL_USER,
-              subject: "Hello ✔",
-              text: "Hello world?", // plain‑text body
-              html: "<b>Hello world?</b>", // HTML body
+              subject: `Message from ${name} @ ${email}`,
+              text: message,
             });
 
-            res.send("Message sent:", info.messageId);
+            if (info.messageId) {
+              res.send({"message": "Message sent!", "status" : 200});
+            } else {
+              res.send({"error": "Failed to send message", "status" : 400})
+            }
           })();
     })
 
