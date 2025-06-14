@@ -1,6 +1,6 @@
 import './Job.css'
 
-const Job = () => {
+const Job = ({title, employer, start, end, bullets}) => {
 
     return (
         <div className='jobObject'>
@@ -8,16 +8,15 @@ const Job = () => {
                 <img className='jobLogo' src="/images/ericsson.svg"></img>
                 <div>
                     <div className='fullTitle'>
-                        <div className='jobTitle'>Web Developer </div>
-                        <div className='jobEmployer'> @ Ericsson</div>
+                        <div className='jobTitle'>{title} </div>
+                        <div className='jobEmployer'> @ {employer}</div>
                     </div>
-                    <div>May 2024 - Present</div>
+                    <div>{start} - {end}</div>
                 </div>
             </div>
             <div className='jobDesc'>
                 <ul>
-                    <li>Worked on a variety of web development projects using multiple frameworks</li>
-                    <li>Implemented major features using React and Flask</li>
+                    {bullets.map((bullet) => {return <li>{bullet}</li>})}
                 </ul>
             </div>
         </div>
