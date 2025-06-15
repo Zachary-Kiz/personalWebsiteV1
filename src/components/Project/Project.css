@@ -27,3 +27,13 @@
     border-radius: 10px;
     background-color: #112044;
 }
+
+.projectSkills {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.skillsRight {
+    justify-content: right;
+}

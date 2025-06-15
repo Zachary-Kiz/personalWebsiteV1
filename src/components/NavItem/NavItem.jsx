@@ -7,7 +7,7 @@ const NavItem = ({isIcon, text, icon}) => {
         <div>
             
         {!isIcon ?
-            <Link to={text} offset={-50} smooth={true} duration={500}>
+            <Link to={text} offset={-100} smooth={true} duration={500}>
                 <div className="navText">{text}</div>
             </Link>
             :

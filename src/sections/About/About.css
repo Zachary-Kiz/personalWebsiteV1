@@ -14,6 +14,18 @@
     gap: 250px;
 }
 
+@media (max-width : 1000px) {
+    .aboutContainer {
+        flex-direction: column;
+        gap: 100px;
+    }
+
+    .aboutMe {
+        width: 50vw;
+    }
+    
+}
+
 .aboutMeDesc {
     background-color: rgb(2, 12, 27, 0.7);
     padding: 20px;

@@ -1,16 +1,30 @@
 import Project from "../../components/Project/Project";
 import Header from "../../components/Header/Header"
 import './Projects.css'
+import { useEffect } from "react";
+import { useState } from "react";
+import fetchProjects from "../../api/fetchProjects";
 
 const Projects = () => {
+
+    const [projects, setProjects] = useState([])
+
+    useEffect(() => {
+        const getProj = async () => {
+            const projList = await fetchProjects();
+            setProjects(projList);
+        }
+        getProj()
+    }, [])
+    
     return (
         <>
         <div>
             <Header>Projects</Header>
             <div className="projList">
-                <Project title={"Todo List"} isLeft></Project>
-                <Project title={"Todo List"} ></Project>
-                <Project title={"Todo List"} isLeft></Project>
+                {projects.map((project, index) => {
+                    return <Project title={project.title} desc={project.desc} skills={project.skills} isLeft={index % 2 == 1}></Project>
+                })}
             </div>
             
         </div>

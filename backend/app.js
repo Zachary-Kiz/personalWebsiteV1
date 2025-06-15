@@ -41,6 +41,12 @@ async function mongoConnect() {
       res.send(jobs)
     })
 
+    app.get('/projects', async (req, res) => {
+      const projectDb = client.db('Personal_Website').collection('Projects');
+      const projects = await projectDb.find().sort({timestamp: -1}).limit(4).toArray();
+      res.send(projects)
+    })
+
     app.post('/send_email', (req, res) => {
 
       const { name, email, message } = req.body;

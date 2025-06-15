@@ -1,6 +1,6 @@
 import './Project.css'
 
-const Project = ({title, body, image, skills, isLeft}) => {
+const Project = ({title, desc, image, skills, isLeft}) => {
     return (
         <div className="experienceContainer">
             <div className={"projectImage " + (isLeft ? 'projectLeft' : 'projectRight')}>
@@ -11,10 +11,13 @@ const Project = ({title, body, image, skills, isLeft}) => {
                     {title}
                 </h2>
                 <div className='projectBody'>
-                    To teach myself react I created a ToDo List application.
-                    Users can create, update, and categorize todos.
+                    {desc}
                 </div>
-                <div>React, HTML, CSS</div>
+                <div className={'projectSkills ' + (isLeft ? 'skillsRight' : "")}>
+                    {skills.map(skill => {
+                        return <div>{skill}</div>
+                    })}
+                </div>
             </div>
         </div>
     )

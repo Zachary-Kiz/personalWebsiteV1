@@ -3,9 +3,15 @@
     flex-direction: column;
     margin: auto;
     justify-content: center;
-    width: 35%;
+    width: 50vw;
     background-color: rgb(2, 12, 27, 0.7);
     padding: 20px;
     border-radius: 20px;
     gap: 15px;
+}
+
+@media (max-width : 1000px) {
+    .contactContainer {
+        width : 80vw
+    }
 }
