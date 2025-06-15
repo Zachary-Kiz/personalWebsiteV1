@@ -16,7 +16,7 @@ const Job = ({title, employer, start, end, bullets}) => {
             </div>
             <div className='jobDesc'>
                 <ul>
-                    {bullets.map((bullet) => {return <li>{bullet}</li>})}
+                    {bullets.map((bullet, index) => {return <li key={`${title}_${index}`}>{bullet}</li>})}
                 </ul>
             </div>
         </div>

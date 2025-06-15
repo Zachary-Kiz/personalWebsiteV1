@@ -9,6 +9,10 @@
     z-index: 0;
 }
 
+.projectTitle {
+    color: white;
+}
+
 .projectDetails {
     z-index: 1;
 }
@@ -36,4 +40,22 @@
 
 .skillsRight {
     justify-content: right;
+}
+
+.projLinks {
+    display: flex;
+    flex-direction: row;
+    gap: 10px
+}
+
+.projectLink {
+    filter: invert(79%) sepia(4%) saturate(3069%) hue-rotate(190deg) brightness(76%) contrast(74%);
+    transition: filter 0.2s ease-in;
+    display: flex;
+    height: 24px;
+    margin: 5px;
+}
+
+.projectLink:hover {
+    filter: invert(87%) sepia(40%) saturate(560%) hue-rotate(95deg) brightness(101%) contrast(103%);
 }
