@@ -5,3 +5,14 @@ input {
     padding: 5px;
     border-radius: 5px;
 }
+
+.inputComponent {
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+
+.error {
+    color: red;
+    font-size: small;
+}

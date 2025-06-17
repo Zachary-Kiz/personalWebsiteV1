@@ -1,4 +1,5 @@
 textarea {
+    font-family: inherit;
     color:white;
     background-color: #112044;
     border: 0px;
@@ -6,4 +7,15 @@ textarea {
     border-radius: 5px;
     min-height: 200px;
     width: unset;
+}
+
+.textareaComponent {
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+
+.error {
+    color: red;
+    font-size: small;
 }
