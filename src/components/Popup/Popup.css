@@ -1,0 +1,32 @@
+.popupBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255,255,255, 0.6);
+}
+
+.popupCenter {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.popupContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    background-color: rgb(2, 12, 27);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.closeContainer {
+    align-items: center;
+    width: min-content;
+}

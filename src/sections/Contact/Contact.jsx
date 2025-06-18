@@ -7,8 +7,7 @@ import Button from "../../components/Button/Button";
 import sendEmail from "../../api/sendEmail";
 import { Ring } from 'ldrs/react'
 import 'ldrs/react/Ring.css'
-
-// Default values shown
+import Popup from "../../components/Popup/Popup";
 
 const Contact = () => {
     const [form, setForm] = useState({
@@ -19,6 +18,7 @@ const Contact = () => {
 
     const [errors, setErrors] = useState({});
     const [isLoading, setIsLoading] = useState(false);
+    const [isOpen, setIsOpen] = useState("")
 
     const handleUpdate = (e) => {
         const { name, value } = e.target;
@@ -59,6 +59,7 @@ const Contact = () => {
         submitEmail();
         setTimeout(function() {
             setIsLoading(false)
+            setIsOpen("Success")
         }, 1000)
         
     };
@@ -66,6 +67,9 @@ const Contact = () => {
     return (
         <div>
             <Header>Contact</Header>
+            <Popup title={"Email Sent Successfully!"} isOpen={isOpen.includes("Success")} setIsOpen={setIsOpen}>
+                Thank you for reaching out, I will respond as soon as possible!
+            </Popup>
             <div className="contactContainer">
                 Have a question, or want to work together?
                 Message me using the form below!
