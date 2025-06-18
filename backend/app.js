@@ -37,7 +37,7 @@ async function mongoConnect() {
 
     app.get('/jobs', async (req, res) => {
       const jobDB = client.db('Personal_Website').collection('Jobs');
-      const jobs = await jobDB.find().sort({ timestamp: -1 }).limit(3).toArray();
+      const jobs = await jobDB.find().limit(3).toArray();
       res.send(jobs)
     })
 

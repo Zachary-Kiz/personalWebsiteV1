@@ -4,6 +4,7 @@
     border-radius: 20px;
     margin-bottom: 30px;
     width: 100%;
+    box-shadow: 5px 5px 5px black;
 }
 
 .jobHeader {

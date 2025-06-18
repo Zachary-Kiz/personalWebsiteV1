@@ -1,0 +1,26 @@
+.footerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(2, 12, 27, 0.7);
+    width: 100vw;
+    height: 15vh;
+    justify-content: center;
+}
+
+.footerImage {
+    height: 30px;
+    color:black;
+    transition: filter 0.2s ease-in;
+    filter: invert(79%) sepia(4%) saturate(3069%) hue-rotate(190deg) brightness(76%) contrast(74%);
+}
+
+.footerImage:hover {
+        filter: invert(87%) sepia(40%) saturate(560%) hue-rotate(95deg) brightness(101%) contrast(103%);
+}
+
+.footerLinks {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
