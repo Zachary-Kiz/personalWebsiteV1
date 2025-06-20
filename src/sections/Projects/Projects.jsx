@@ -23,7 +23,7 @@ const Projects = () => {
             <Header>Projects</Header>
             <div className="projList">
                 {projects.map((project, index) => {
-                    return <Project key={project.title + '_' + index} title={project.title} desc={project.desc} skills={project.skills} github={project.github} link={project.link} isLeft={index % 2 == 1}></Project>
+                    return <Project key={project.title + '_' + index} title={project.title} desc={project.desc} image={project.image} skills={project.skills} github={project.github} link={project.link} isLeft={index % 2 == 1}></Project>
                 })}
             </div>
             

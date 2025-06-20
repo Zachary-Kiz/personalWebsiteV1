@@ -1,5 +1,6 @@
 .experienceContainer {
-    display: grid;
+    display: flex;
+    align-items: center;
     gap: 40px;
     width: 70%;
     margin: auto;
@@ -7,6 +8,7 @@
 
 .projectImage {
     z-index: 0;
+    order : 0;
 }
 
 .projectTitle {
@@ -18,11 +20,12 @@
 }
 
 .projectLeft {
-    grid-area: 2 / 6 / -1 / -1;
+    order: -1;
+    margin-right: -10vw ;
+    width: 50vw;
 }
 
 .projectRight {
-    grid-area: 1 / 4 / -1 / 7;
     text-align: right;
 }
 
@@ -30,6 +33,7 @@
     padding: 20px;
     border-radius: 10px;
     background-color: #112044;
+    width: 25vw;
 }
 
 .projectSkills {
@@ -40,24 +44,115 @@
     margin-bottom: 0.5em;
 }
 
+@media (max-width : 1200px) {
+
+    .experienceContainer {
+        width: 90%;
+    }
+
+    .projectBody {
+        width: 35vw;
+    }
+}
+
 .skillsRight {
     justify-content: right;
 }
 
 .projLinks {
+    position: relative;
     display: flex;
     flex-direction: row;
-    gap: 10px
+    gap: 10px;
 }
 
+
+
 .projectLink {
+    position: relative;
     filter: invert(79%) sepia(4%) saturate(3069%) hue-rotate(190deg) brightness(76%) contrast(74%);
     transition: filter 0.2s ease-in;
     display: flex;
     height: 24px;
+    width: 24px;
     margin: 5px;
+    z-index: 99999;
 }
 
 .projectLink:hover {
     filter: invert(87%) sepia(40%) saturate(560%) hue-rotate(95deg) brightness(101%) contrast(103%);
+}
+
+.imgFilter {
+  display: inline-block;
+  position: relative;
+  border: 1px solid var(--light-green);
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.imgFilter::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--light-green);
+  opacity: 0.4;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media (min-width: 1200px) {
+    .imgSize {
+        display: block;
+        max-width: 35vw;
+        height: auto;
+    }
+}
+
+@media (max-width: 1200px) {
+    .imgSize {
+        display: block;
+        max-width: 45vw;
+        height: auto;
+    }
+}
+
+
+.mobileProject {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:20px;
+    padding: 20px;
+    height: 35vh;
+    min-height: fit-content;
+    width: 80vw;
+    background-color: #112240;
+    z-index: 0;
+    box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.4);
+    color: white;
+}
+
+
+.mobileProject img {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    z-index: -2;
+}
+
+.mobileTitle {
+    opacity: unset;
+}
+
+.projLinks img {
+    opacity: 1;
 }
