@@ -3,6 +3,7 @@
     color: white;
     justify-content: center;
     transition: color 0.1s ease-in-out;
+    cursor: pointer;
 }
 
 .navTextPc:hover {
@@ -15,6 +16,7 @@
     background-color: var(--dark-blue);
     transition: color 0.1s ease-in-out;
     border-bottom: 1px solid black;
+    cursor: pointer;
 }
 
 .navTextMobile:hover {

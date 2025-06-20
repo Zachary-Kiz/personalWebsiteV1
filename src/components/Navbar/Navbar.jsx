@@ -8,6 +8,27 @@ const Navbar = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 700);
     const [isVisible, setIsVisible] = useState(false)
 
+    const [scrollDir, setScrollDir] = useState(null);
+    const [lastScrollY, setLastScrollY] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > lastScrollY) {
+            setScrollDir('down');
+        } else if (currentScrollY < lastScrollY) {
+            setScrollDir('up');
+        }
+
+        setLastScrollY(currentScrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [lastScrollY]);
+
     const viewMenu = () => {
         setIsVisible(prev => !prev)
     }
@@ -29,7 +50,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="navbar">
+            <div className={`navbar ${scrollDir == 'down' ? '' : 'visibleNav'}`}>
                 {isMobile && <div className="positionBurger"><BurgerIcon onClick={viewMenu}></BurgerIcon></div>}
                 {!isMobile && navList}
             </div>

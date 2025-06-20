@@ -1,12 +1,14 @@
 .navbar {
     display: flex;
-    position: sticky;
-    z-index: 999999999;
+    position: fixed;
+    z-index: 9;
     background-color: #0a192f;
     top:0;
     width: 100%;
     justify-content: flex-end;
     box-shadow: 10px 10px 10px rgb(19, 19, 19);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
 }
 
 .pcNav {
@@ -31,4 +33,8 @@
 .positionBurger {
     margin-top: 5px;
     margin-right: 10px;
+}
+
+.visibleNav {
+    transform: translateY(0)
 }
