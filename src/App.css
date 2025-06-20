@@ -1,6 +1,13 @@
 .pages {
+    position: relative;
     display: flex;
     flex-direction: column;
     margin: auto;
     align-items: center;
+    z-index: -1;
+}
+
+.mainBody {
+    position: relative;
+    z-index: 0;
 }

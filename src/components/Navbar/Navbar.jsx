@@ -39,8 +39,12 @@ const Navbar = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    useEffect(() => {
+        setIsVisible(false)
+    }, [isMobile])
+
     const navList = (
-        <div className={isMobile ? `mobileNav ${isVisible ? "visible" : ""}` :"pcNav"}>
+        <div className={isMobile ? `mobileNav ${isVisible && scrollDir !== 'down' ? "visible" : ""}` :"pcNav"}>
             <NavItem text="About" isMobile={isMobile}></NavItem>
             <NavItem text="Experience" isMobile={isMobile}></NavItem>
             <NavItem text="Projects" isMobile={isMobile}></NavItem>
@@ -49,7 +53,7 @@ const Navbar = () => {
     )
 
     return (
-        <div>
+        <div className="navContainer">
             <div className={`navbar ${scrollDir == 'down' ? '' : 'visibleNav'}`}>
                 {isMobile && <div className="positionBurger"><BurgerIcon onClick={viewMenu}></BurgerIcon></div>}
                 {!isMobile && navList}

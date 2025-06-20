@@ -1,9 +1,14 @@
-.navbar {
-    display: flex;
+.navContainer {
     position: fixed;
-    z-index: 9;
-    background-color: #0a192f;
     top:0;
+    width: 100%;
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    z-index: 99;
+    background-color: #0a192f;
     width: 100%;
     justify-content: flex-end;
     box-shadow: 10px 10px 10px rgb(19, 19, 19);
@@ -17,12 +22,13 @@
 }
 
 .mobileNav {
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: column;
+    z-index: 98;
     width: 100%;
     text-align: center;
-    transform: translateY(-100%);
+    transform: translateY(-150%);
     transition: 0.5s transform ease-in-out;
 }
 

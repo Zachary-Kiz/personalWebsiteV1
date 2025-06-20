@@ -23,7 +23,7 @@ const Experience = () => {
             <Header>Experience</Header>
             <div className="jobsContainer">
                 {jobs && jobs.map(job => {
-                    return <Job title={job.title} employer={job.employer} start={job.start} end={job.end} bullets={job.bullets}></Job>
+                    return <Job key={job.title + '_' + job.employer} title={job.title} employer={job.employer} start={job.start} end={job.end} bullets={job.bullets}></Job>
                 })}
             </div>
             
