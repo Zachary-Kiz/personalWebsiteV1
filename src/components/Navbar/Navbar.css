@@ -8,3 +8,27 @@
     justify-content: flex-end;
     box-shadow: 10px 10px 10px rgb(19, 19, 19);
 }
+
+.pcNav {
+    display: inherit;
+    flex-direction: row;
+}
+
+.mobileNav {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-100%);
+    transition: 0.5s transform ease-in-out;
+}
+
+.visible {
+    transform: translateY(0);
+}
+
+.positionBurger {
+    margin-top: 5px;
+    margin-right: 10px;
+}

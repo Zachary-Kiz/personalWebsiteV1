@@ -14,6 +14,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  --light-green : #64ffda;
+  --dark-blue : rgb(2, 12, 27, 0.7);
 }
 
 body {
