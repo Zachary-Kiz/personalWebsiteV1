@@ -1,3 +1,4 @@
+import Pill from '../Pill/Pill';
 import './Project.css'
 
 const Project = ({title, desc, image, skills, github, link, isLeft}) => {
@@ -16,7 +17,7 @@ const Project = ({title, desc, image, skills, github, link, isLeft}) => {
                 </div>
                 <div className={'projectSkills ' + (isLeft ? 'skillsRight' : "")}>
                     {skills.map((skill, index) => {
-                        return <div key={`${skill}_${index}`}>{skill}</div>
+                        return <Pill text={skill} key={`${skill}_${index}`}></Pill>
                     })}
                 </div>
                 <div className={'projLinks ' + (isLeft ? 'skillsRight' : "")}>

@@ -8,8 +8,8 @@ const Landing = () => {
     return (
         <div className="landingPage">
             <div className="landingContainer">
-                <BigText>Hi, I'm Zach!</BigText>
-                <BigText>I'm a web developer!</BigText>
+                <BigText>Hi, I'm <div className="zach">Zach.</div></BigText>
+                <BigText>I'm a web developer.</BigText>
                 <Link style={{'margin': 'auto'}} offset={-50} to="About" smooth={true} duration={500}>
                     <Button>
                         <div>About Me</div>

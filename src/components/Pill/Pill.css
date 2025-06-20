@@ -1,0 +1,10 @@
+.pill {
+    background-color: rgb(94, 234, 212, 0.1);
+    color : var(--light-green);
+    padding : 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 15px;
+    font-size: small;
+    font-weight: 500;
+}

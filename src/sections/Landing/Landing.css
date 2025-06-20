@@ -3,8 +3,14 @@
     text-align: center;
     flex-direction: column;
     padding-top: 30vh;
+    color: white;
 }
 
 .landingPage {
     height : 95vh
+}
+
+.zach {
+    color : var(--light-green);
+    display: inline;
 }
