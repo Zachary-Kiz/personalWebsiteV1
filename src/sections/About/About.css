@@ -23,7 +23,7 @@
 }
 
 .headshot {
-    height: 25vh;
+    height: 30vh;
     border:  4px solid #64ffda;
     border-radius: 5px ;
 }
@@ -33,13 +33,40 @@
     justify-content: center;
 }
 
+@keyframes headshot {
+  0% {opacity: 0; transform: translateX(-200px);}
+  100% {opacity: 1; transform: translateX(0);}
+}
+
+.invisHeadShot {
+  opacity: 0;
+  transform: translateX(-200px);
+}
+
+
+.viewHeadShot {
+  animation: headshot 1.5s;
+}
+
 .skillsContainer {
     display: flex;
     flex-direction: row;
 }
 
 .skillCol {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width : 1200px) {
+    .viewHeadShot {
+        width:40vw;
+    }
+
+    .aboutContainer {
+        gap : 50px
+    }
 }
 
 

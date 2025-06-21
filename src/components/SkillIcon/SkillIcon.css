@@ -1,14 +1,26 @@
 .skillContainer {
     padding: 10px 15px 10px 15px;
     border: 2px solid #64ffda;
+    width: 7vw;
+    min-width: 100px;
     margin: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 10px;
     background-color: rgb(2, 12, 27, 0.7);
+    text-align: center;
 }
 
 .skillIcon {
-    height: 7vh
+    height: 5vh;
+    min-height: 40px;
+}
+
+@media (max-width: 600px) {
+    .skillContainer {
+        padding: 3px;
+        font-size: small;
+        font-weight: 350;
+    }
 }

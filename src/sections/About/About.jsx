@@ -2,8 +2,11 @@ import { Element } from "react-scroll";
 import Header from "../../components/Header/Header"
 import SkillIcon from "../../components/SkillIcon/SkillIcon";
 import './About.css'
+import { useInView } from "../../hooks/useInView";
 
 const About = () => {
+
+    const [ref, hasBeenVisible] = useInView()
 
     return (
         <>
@@ -12,8 +15,8 @@ const About = () => {
             About
         </Header>
         <div className="aboutContainer">
-            <div className="aboutMe">
-                <div className="headshotContainer">
+            <div ref={ref} className={"aboutMe " + (hasBeenVisible ? 'viewHeadShot': 'invisHeadShot')}>
+                <div  className={"headshotContainer"}>
                     <img className="headshot" src="/images/headshot.jpg"></img>
                 </div>
                 <div className="aboutMeDesc">
@@ -22,7 +25,7 @@ const About = () => {
                     In my free time I enjoy reading and hitting the gym.
                 </div>
             </div>
-            <div className="skillsContainer">
+            <div className={"skillsContainer " + (hasBeenVisible ? 'inView' : 'notInView')}>
                 <div className="skillCol">
                     <SkillIcon link='/images/javascript.png' title={'JAVASCRIPT'}></SkillIcon>
                     <SkillIcon link='/images/html.png' title={'HTML'}></SkillIcon>
@@ -32,6 +35,7 @@ const About = () => {
                     <SkillIcon link='/images/react.png' title={"REACT"}></SkillIcon>
                     <SkillIcon link='/images/mongodb.png' title={"MONGODB"}></SkillIcon>
                     <SkillIcon link='/images/flask.png' title={"FLASK"}></SkillIcon>
+                    <SkillIcon link='/images/express.png' title={"EXPRESS"}></SkillIcon>
                 </div>
                 <div className="skillCol">
                     <SkillIcon link='/images/dash.png' title={"DASH PLOTLY"}></SkillIcon>
