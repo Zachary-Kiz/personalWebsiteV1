@@ -1,11 +1,14 @@
 import './Job.css'
+import { useInView } from '../../hooks/useInView'
 
-const Job = ({title, employer, start, end, bullets}) => {
+const Job = ({title, employer, image, start, end, bullets}) => {
+
+    const [ref, hasBeenVisible] = useInView()
 
     return (
-        <div className='jobObject'>
+        <div ref={ref} className={`jobObject  ${hasBeenVisible ? 'inView' : 'notInView'}`}>
             <div className="jobHeader">
-                <img className='jobLogo' src="/images/ericsson.svg"></img>
+                <img className='jobLogo' src={image}></img>
                 <div>
                     <div className='fullTitle'>
                         <div className='jobTitle'>{title} </div>

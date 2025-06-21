@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
 import Pill from '../Pill/Pill';
 import './Project.css'
+import { useInView } from '../../hooks/useInView';
 
 const Project = ({title, desc, image, skills, github, link, isLeft}) => {
+
+    const [ref, hasBeenVisible] = useInView()
 
     const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
 
@@ -15,7 +18,7 @@ const Project = ({title, desc, image, skills, github, link, isLeft}) => {
     return (
         <>
         {!isMobile ? (
-            <div className="experienceContainer">
+            <div ref={ref} className={"experienceContainer " + (hasBeenVisible ? 'inView': 'notInView') }>
             <div className={"projectImage " + (isLeft ? 'projectLeft' : 'projectRight')}>
                 <div className='imgFilter'>
                     <img className='imgSize' src={image}></img>

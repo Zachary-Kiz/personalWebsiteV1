@@ -9,8 +9,12 @@ import { Ring } from 'ldrs/react'
 import 'ldrs/react/Ring.css'
 import Popup from "../../components/Popup/Popup";
 import Footer from "../../components/Footer/Footer";
+import { useInView } from "../../hooks/useInView";
 
 const Contact = () => {
+
+    const [ref, hasBeenVisible] = useInView()
+
     const [form, setForm] = useState({
         name: '',
         email: '',
@@ -73,7 +77,7 @@ const Contact = () => {
     return (
         <div>
             <Header>Contact</Header>
-            <div className="contactContainer">
+            <div ref={ref} className={"contactContainer " + (hasBeenVisible ? 'inView' : 'notInView')}>
                 Have a question, or want to work together?
                 Message me using the form below!
 

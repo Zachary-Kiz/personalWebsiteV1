@@ -14,7 +14,8 @@
 
 .jobLogo {
     margin-right: 20px;
-    height: 5vh;
+    height: 50px;
+    width: 55px;
     background-color: white;
     border-radius: 5px;
 }
@@ -33,4 +34,10 @@
     gap: 5px;
     font-size: large;
     font-weight: 500;
+}
+
+@media (max-width : 1200px) {
+    .jobObject {
+        width: 80%;
+    }
 }
