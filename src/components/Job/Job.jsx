@@ -11,8 +11,7 @@ const Job = ({title, employer, image, start, end, bullets}) => {
                 <img className='jobLogo' src={image}></img>
                 <div>
                     <div className='fullTitle'>
-                        <div className='jobTitle'>{title} </div>
-                        <div className='jobEmployer'> @ {employer}</div>
+                        <div className='jobTitle'>{title} </div><div className='jobEmployer'> @ {employer}</div>
                     </div>
                     <div>{start} - {end}</div>
                 </div>

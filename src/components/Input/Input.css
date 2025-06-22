@@ -16,3 +16,9 @@ input {
     color: red;
     font-size: small;
 }
+
+@media (max-width : 600px) {
+    input {
+        height: 20px;
+    }
+}
