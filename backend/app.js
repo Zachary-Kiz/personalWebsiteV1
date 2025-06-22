@@ -77,11 +77,13 @@ async function mongoConnect() {
       })();
     });
 
-    app.use(express.static(path.join(__dirname, '../dist')));
+    if (process.env.PROD_ENV === 'production' || process.env.PROD_ENV === 'staging') {
+      app.use(express.static(path.join(__dirname, '../dist')));
 
-    app.get('*', (req, res) => {
-      res.sendFile(path.join(__dirname, '../dist', 'index.html'));
-    });
+      app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, '../dist/index.html'));
+      });
+    }
 
     app.listen(port, () => {
       console.log(`App listening on port ${port}`);
