@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "heroku-postbuild": "cd src && npm install && npm run build",
+    "start": "node backend/app.js",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
