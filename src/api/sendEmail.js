@@ -1,6 +1,8 @@
+import API_URL from "./constants";
+
 const sendEmail = async (formData) => {
     try {
-      const response = await fetch('http://localhost:3000/send_email', {
+      const response = await fetch(`${API_URL}/send_email`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

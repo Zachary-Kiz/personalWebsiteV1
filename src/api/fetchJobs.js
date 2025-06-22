@@ -1,6 +1,8 @@
+import API_URL from "./constants";
+
 const fetchJobs = async () => {
     try {
-      const response = await fetch('http://localhost:3000/jobs', {
+      const response = await fetch(`${API_URL}/jobs`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -18,7 +20,7 @@ const fetchJobs = async () => {
       const data = await response.json();
       return data;
     } catch (error) {
-      console.error('❌ API Request Error:', error.message);
+      console.error('API Request Error:', error.message);
       throw error; // rethrow so calling code can handle it too
     }
 }

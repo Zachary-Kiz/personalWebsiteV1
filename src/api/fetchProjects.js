@@ -1,6 +1,8 @@
+import API_URL from "./constants";
+
 const fetchProjects = async () => {
     try {
-      const response = await fetch('http://localhost:3000/projects', {
+      const response = await fetch(`${API_URL}/projects`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
