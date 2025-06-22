@@ -6,7 +6,7 @@ export default defineConfig({
   root : '.',
   plugins: [react()],
   build: {
-    outDir: '../dist',  // Where to output the build (important for Heroku)
+    outDir: './dist',  // Where to output the build (important for Heroku)
     emptyOutDir: true
   }
 })
