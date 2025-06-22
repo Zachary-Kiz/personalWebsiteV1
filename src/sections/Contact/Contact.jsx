@@ -7,11 +7,13 @@ import Button from "../../components/Button/Button";
 import sendEmail from "../../api/sendEmail";
 import { Ring } from 'ldrs/react'
 import 'ldrs/react/Ring.css'
-import Popup from "../../components/Popup/Popup";
 import Footer from "../../components/Footer/Footer";
 import { useInView } from "../../hooks/useInView";
+import { usePopupContext } from "../../context/PopupContext";
 
 const Contact = () => {
+
+    const { setOpenPopup } = usePopupContext()
 
     const [ref, hasBeenVisible] = useInView()
 
@@ -23,7 +25,6 @@ const Contact = () => {
 
     const [errors, setErrors] = useState({});
     const [isLoading, setIsLoading] = useState(false);
-    const [isOpen, setIsOpen] = useState("")
 
     const handleUpdate = (e) => {
         const { name, value } = e.target;
@@ -64,7 +65,7 @@ const Contact = () => {
         submitEmail();
         setTimeout(function() {
             setIsLoading(false)
-            setIsOpen("Success")
+            setOpenPopup("Success")
             setForm({
                 name: '',
                 email: '',
@@ -114,9 +115,6 @@ const Contact = () => {
                 </div>
                 }
             </div>
-            <Popup title={"Email Sent Successfully!"} isOpen={isOpen.includes("Success")} setIsOpen={setIsOpen}>
-                Thank you for reaching out, I will respond as soon as possible!
-            </Popup>
             <Footer></Footer>
         </div>
     );
