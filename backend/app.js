@@ -26,6 +26,10 @@ app.use(cors({
 
 app.use(bodyParser.json());
 
+app.listen(port, () => {
+  console.log(`App listening on port ${port}`);
+});
+
 async function mongoConnect() {
 
   try {
@@ -77,17 +81,13 @@ async function mongoConnect() {
       })();
     });
 
-    if (process.env.PROD_ENV === 'production' || process.env.PROD_ENV === 'staging') {
+    if (process.env.PROD_ENV === 'production' || process.env.PROD_ENV === 'staging' || true) {
       app.use(express.static(path.join(__dirname, '../dist')));
 
       app.get('/', (req, res) => {
         res.sendFile(path.join(__dirname, '../dist/index.html'));
       });
     }
-
-    app.listen(port, () => {
-      console.log(`App listening on port ${port}`);
-    });
   } catch (error) {
     console.error('Failed to connect to MongoDB: ', error);
   }
